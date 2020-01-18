@@ -1,92 +1,94 @@
 {
-    "editor": {
-        "fontSize": 18,
-        "formatOnSave": true,
-    },
-    "C_cpp": {
-        "updateChannel": "Insiders",
-        "default.intelliSenseMode": "clang-x64",
-        "clang_format_path": "/usr/bin/clang-format",
-    },
-    "window": {
-        "menuBarVisibility": "toggle",
-    },
-    // "workbench": {
-    //     "tree.indent": 32,
-    // },
-    "vim": {
-        "incsearch": true,
-        "useSystemClipboard": true,
-        "useCtrlKeys": true,
-        "hlsearch": true,
-        "handleKeys": {
-            "<C-a>": false,
-            "<C-w>": false,
-            "<C-c>": false,
-            "<C-s>": false,
-            "<C-d>": false,
-        },
-        "normalModeKeyBindings": [
-            {
-                "before": [
-                    "u"
-                ],
-                "after": [],
-                "commands": [
-                    {
-                        "command": "undo"
-                    }
-                ]
-            },
-            {
-                "before": [
-                    "j"
-                ],
-                "after": [
-                    "g",
-                    "j"
-                ]
-            },
-            {
-                "before": [
-                    "<C-r>"
-                ],
-                "after": [],
-                "commands": [
-                    {
-                        "command": "redo"
-                    }
-                ]
-            },
-        ],
-    },
-    "workbench": {
-        "tree": {
-            "indent": 32,
-        },
-        "colorTheme": "Gruvbox Dark Soft",
-        "settings": {
-            "editor": "json",
-            "useSplitJSON": true,
-        }
-    },
-    "terminal": {
-        "integrated": {
-            "rendererType": "dom",
-        },
-    },
-    // "terminal.integrated.rendererType": "dom",
-    // "python.jediEnabled": false,
-    // "workbench.colorTheme": "Mariana Pro (Warm)",
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "pdflatex",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        }
-    ],
+	"editor": {
+		"fontSize": 18,
+		"formatOnSave": true,
+	},
+	"C_cpp": {
+		"updateChannel": "Insiders",
+		"default.intelliSenseMode": "clang-x64",
+		"clang_format_path": "/usr/bin/clang-format",
+	},
+	"window": {
+		"menuBarVisibility": "toggle",
+	},
+	// "workbench": {
+		//     "tree.indent": 32,
+		// },
+		"vim": {
+			"incsearch": true,
+			"easymotion": false,
+			"statusBarColorControl": false,
+			"useSystemClipboard": true,
+			"useCtrlKeys": true,
+			"hlsearch": true,
+			"handleKeys": {
+				"<C-a>": false,
+				"<C-w>": false,
+				"<C-c>": false,
+				"<C-s>": false,
+				"<C-d>": false,
+			},
+			"normalModeKeyBindings": [
+				{
+					"before": [
+						"u"
+					],
+					"after": [],
+					"commands": [
+						{
+							"command": "undo"
+						}
+					]
+				},
+				{
+					"before": [
+						"j"
+					],
+					"after": [
+						"g",
+						"j"
+					]
+				},
+				{
+					"before": [
+						"<C-r>"
+					],
+					"after": [],
+					"commands": [
+						{
+							"command": "redo"
+						}
+					]
+				},
+			],
+		},
+		"workbench": {
+			"tree": {
+				"indent": 32,
+			},
+			"colorTheme": "Gruvbox Dark Soft",
+			"settings": {
+				"editor": "json",
+				"useSplitJSON": true,
+			}
+		},
+		"terminal": {
+			"integrated": {
+				"rendererType": "dom",
+			},
+		},
+		// "terminal.integrated.rendererType": "dom",
+		// "python.jediEnabled": false,
+		// "workbench.colorTheme": "Mariana Pro (Warm)",
+		"latex-workshop.latex.recipes": [
+			{
+				"name": "pdflatex",
+				"tools": [
+					"pdflatex",
+					"bibtex",
+					"pdflatex",
+					"pdflatex"
+				]
+			}
+		],
 }
