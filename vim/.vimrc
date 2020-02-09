@@ -1,34 +1,37 @@
 call plug#begin('~/.vim/plugged')
-Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'Chiel92/vim-autoformat'
-Plug 'vim-latex/vim-latex'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'nvie/vim-flake8'
 Plug 'Raimondi/delimitMate'
 Plug 'dense-analysis/ale'
+Plug 'morhetz/gruvbox'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 
-
+set wildmenu
+set wildmode=longest:full,full
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 map <BS> <plug>NERDCommenterToggle
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
-nmap s :w<CR>
+map <C-Tab> :tabnext<CR>
+" map <C-s> :w<CR>
+
 nmap q :q<CR>
 nmap f :Autoformat<CR>
+nmap a A
 
-colorscheme onedark
+colorscheme gruvbox
+set background=dark
+" let g:gruvbox_contrast_dark = 'soft'
 set number
 set spelllang=en_us
 set clipboard=unnamedplus
@@ -49,6 +52,7 @@ set linebreak
 " set conceallevel=1
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 set shiftwidth=4
 set tabstop=4
 set foldmethod=indent
@@ -63,11 +67,8 @@ set t_RV=
 let skip_defaults_vim=1
 set viminfo=""
 
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_ViewRule_pdf= 'zathura'
-"
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
-let b:ale_linters = ['clangcheck','flake8']
+let b:ale_linters = ['clangcheck','flake8','clangtidy']
 
