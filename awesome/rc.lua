@@ -163,11 +163,6 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- Prompt
-    -- awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
-    --           {description = "run prompt", group = "launcher"})
-	--
-	--
     awful.key({ modkey }, "r", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
 
@@ -177,8 +172,8 @@ clientkeys = gears.table.join(
     awful.key({modkey},'a',function()awful.util.spawn("flameshot gui",false)end),
     awful.key({'Control'},'q',function(c) c:kill()end,{description='close',group='client'}),
     awful.key({},'Print',function()awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'", false)end),
-    awful.key({},'XF86AudioLowerVolume',function()awful.util.spawn('amixer set Master 5%-', false)end),
-    awful.key({},'XF86AudioRaiseVolume',function()awful.util.spawn('amixer set Master 5%+', false)end),
+	-- awful.key({},'XF86AudioLowerVolume',function()awful.util.spawn('amixer set Master 5%-', false)end),
+	-- awful.key({},'XF86AudioRaiseVolume',function()awful.util.spawn('amixer set Master 5%+', false)end),
 
     awful.key({ modkey,           }, "f",
         function (c)
