@@ -1,0 +1,143 @@
+" plugin {{{
+call plug#begin('~/.vim/plugged')
+Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'Chiel92/vim-autoformat'
+Plug 'scrooloose/nerdcommenter'
+" Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
+
+Plug 'scrooloose/nerdtree'
+" Plug 'terryma/vim-multiple-cursors'
+" Plug 'Raimondi/delimitMate'
+"Plug 'dense-analysis/ale'
+Plug 'morhetz/gruvbox'
+Plug 'octol/vim-cpp-enhanced-highlight'
+ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+"Plug 'SirVer/ultisnips'
+Plug 'chriskempson/base16-vim'
+call plug#end()
+" }}}
+
+"{{{
+  let g:ycm_auto_trigger = 0
+  let g:NERDAltDelims_c = 1
+"}}}
+
+" nerdtree {{{
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" }}}
+
+
+" basic setting{{{
+set wildmenu
+set wildmode=longest:full,full
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+"}}}
+
+
+" keymap {{{
+"inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
+"inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+map <BS> <plug>NERDCommenterToggle
+
+"}}}
+
+
+" Startup {{{
+
+filetype indent plugin on
+augroup ft_vim
+    au!
+    au FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+
+" General {{{
+"
+
+set wrap
+set linebreak
+set nocompatible
+set nobackup
+set noswapfile
+set display+=lastline
+set history=1024
+set autochdir
+set whichwrap=b,s,<,>,[,]
+set nobomb
+set backspace=indent,eol,start whichwrap+=<,>,[,]
+set clipboard=unnamedplus
+set winaltkeys=no
+" }}}
+
+
+" Lang & Encoding {{{
+" set fileencodings=utf-8,gbk2312,gbk,gb18030,cp936
+
+set encoding=cp437
+set encoding=utf-8
+set fileencoding=latin1
+set fileformat=unix
+
+let $LANG = 'en_US.UTF-8'
+"language messages zh_CN.UTF-8
+" }}}
+
+
+" GUI {{{
+" colorscheme Tomorrow-Night
+" colorscheme base16-default-dark
+colorscheme gruvbox
+set background=dark
+"colorscheme corporation_modified
+
+
+" set guioptions-=e
+" set nolist
+set list
+set listchars=tab:>-,space:·
+
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+set cursorline
+set hlsearch
+set number
+set lines=35 columns=140
+set splitbelow
+set splitright
+set guioptions-=T
+set guioptions-=m
+set guioptions-=L
+set guioptions-=r
+set guioptions-=b
+" set guifont=Inconsolata:h12:cANSI
+set guifont=Source\ Code\ Pro\ 11
+"set guifont=Courier\ New:h12:cANSI
+"set guifont=Courier\ New:h12:cANSI
+" }}}
+
+
+" ale {{{
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let b:ale_linters = ['clangtidy']
+"}}}
+
+" debug {{{
+"let g:termdebug_popup = 0
+"let g:termdebug_wide = 163
+"}}}
