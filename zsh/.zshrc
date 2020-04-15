@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
+export PATH=~/.gem/ruby/2.7.0/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/lucas/.oh-my-zsh"
+export ZSH="/home/guangzong/.oh-my-zsh"
 # export mdtoc="/home/lucas/.cargo/bin"
 # export PATH=/home/lucas/.cargo/bin:$PATH
 
@@ -70,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(extract zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,4 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="vim --servername vim"
+#alias vim="gvim --servername gvim"
+# alias vim="gvim -f"
+# alias gvim="gvim -f"
+alias feh="feh --bg-scale Wallpaper/arch.jpg"
+alias second="xrandr --output eDP-1 --off"
+
+[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+
