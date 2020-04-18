@@ -9,17 +9,21 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 "Plug 'Raimondi/delimitMate'
 Plug 'dense-analysis/ale'
-Plug 'morhetz/gruvbox'
 Plug 'octol/vim-cpp-enhanced-highlight'
- Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'Yggdroot/indentLine'
 "Plug 'SirVer/ultisnips'
 "Plug 'chriskempson/base16-vim'
+" color scheme
+Plug 'morhetz/gruvbox'
+"Plug 'gryf/wombat256grf'
 call plug#end()
 " }}}
 
 " plugins configuration{{{
 " ycm
   let g:ycm_auto_trigger = 0
+set splitbelow
 " nerdcommenter
   let g:NERDAltDelims_c = 1
 " nerdtree
@@ -45,12 +49,18 @@ set display+=lastline
 set hlsearch
 set number
 set cursorline
+hi CursorLine cterm=NONE ctermbg=NONE  ctermfg=NONE guibg=NONE guifg=NONE
 
 "colorscheme gruvbox
+"colorscheme wombat256grf
+"colorscheme medic_chalk
 "set background=dark
 
 set list
-set listchars=tab:>-,space:·
+
+set listchars=tab:>-
+"set listchars=tab:>-,space:·
+"set syntax=whitespace
 
 " vim recover settings
 set nobackup
@@ -72,6 +82,7 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 map <BS> <plug>NERDCommenterToggle
+nnoremap f :Autoformat<CR>
 set winaltkeys=no
 "}}}
 
@@ -103,7 +114,7 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=b
 " set guifont=Inconsolata:h12:cANSI
-set guifont=Source\ Code\ Pro\ 11
+set guifont=Source\ Code\ Pro\ 15
 "set guifont=Courier\ New:h12:cANSI
 "set guifont=Courier\ New:h12:cANSI
 " }}}
@@ -112,6 +123,6 @@ set guifont=Source\ Code\ Pro\ 11
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
-let b:ale_linters = ['clangtidy']
+let b:ale_linters = ['clangtidy','flake8']
 "}}}
 
