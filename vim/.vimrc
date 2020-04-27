@@ -13,9 +13,12 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'Yggdroot/indentLine'
 "Plug 'SirVer/ultisnips'
-"Plug 'chriskempson/base16-vim'
+Plug 'sheerun/vim-polyglot'
 " color scheme
 Plug 'morhetz/gruvbox'
+Plug 'sickill/vim-monokai'
+Plug 'tomasr/molokai'
+"Plug 'chriskempson/base16-vim'
 "Plug 'gryf/wombat256grf'
 call plug#end()
 " }}}
@@ -23,7 +26,7 @@ call plug#end()
 " plugins configuration{{{
 " ycm
   let g:ycm_auto_trigger = 0
-set splitbelow
+  set splitbelow
 " nerdcommenter
   let g:NERDAltDelims_c = 1
 " nerdtree
@@ -32,6 +35,9 @@ set splitbelow
 "}}}
 
 " basic setting{{{
+
+syntax on
+autocmd FileType vim setlocal foldmethod=marker " folder for vimrc
 set nocompatible
 set wildmenu
 set wildmode=longest:full,full
@@ -39,7 +45,7 @@ set mouse=a
 set expandtab "convert tabs to spaces
 set shiftwidth=2
 set softtabstop=2
-autocmd FileType vim setlocal foldmethod=marker " folder for vimrc
+set ignorecase
 
 " view 
 set wrap
@@ -51,7 +57,7 @@ set number
 set cursorline
 hi CursorLine cterm=NONE ctermbg=NONE  ctermfg=NONE guibg=NONE guifg=NONE
 
-"colorscheme gruvbox
+colorscheme molokai
 "colorscheme wombat256grf
 "colorscheme medic_chalk
 "set background=dark
