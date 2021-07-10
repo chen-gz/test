@@ -1,0 +1,14 @@
+{
+    "name": "LinuxSettings",
+    "nested_repo": [
+        {
+            "name": "pitt_courses",
+            "path": "..\\pitt_courses",
+            "remote_url": "git@github.com:chen-gz/pitt_courses.git"
+        }
+    ],
+    "committed_version": {
+        "pitt_courses": "e4fc78db3e43bbbfc9f0749118070af1a1f75bc4"
+    },
+    "remote_url": "git@github.com:chen-gz/LinuxSettings.git"
+}
